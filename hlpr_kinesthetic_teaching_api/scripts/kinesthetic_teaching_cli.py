@@ -33,13 +33,13 @@ import os
 import rospy
 
 from hlpr_kinesthetic_teaching_api.kinesthetic_teaching_api import KTInterface
-from hlpr_manipulation_utils.srv import FreezeFrame, FreezeFrameRequest
+from armpy.srv import FreezeFrame, FreezeFrameRequest
 
 if os.environ.get("ROBOT_NAME") == "2d_arm":
     from hlpr_2d_arm_sim.sim_arm_moveit import Gripper2D, Planner2D
 else:
-    from hlpr_manipulation_utils.manipulator import Gripper
-    from hlpr_manipulation_utils.arm_moveit2 import ArmMoveIt
+    from armpy.gripper import Gripper
+    from armpy.arm import Arm as ArmMoveIt
 
 default_save_dir = os.path.normpath(os.path.expanduser("~/test_bagfiles"))
 
