@@ -121,7 +121,7 @@ class KTSegment(object):
                 joint_msg = step[self.JOINT_TOPIC]
                 if self.planner is None:
                     raise RuntimeError("cannot interpret joint keyframe segment because no planner was set.")
-                arm_joints = self.planner.group[0].get_active_joints()
+                arm_joints = self.planner.group.get_active_joints()
                 target = dict([(joint,
                                 joint_msg.position[joint_msg.name.index(joint)])
                                for joint in arm_joints])

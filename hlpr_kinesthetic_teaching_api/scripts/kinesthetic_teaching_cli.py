@@ -141,7 +141,7 @@ if __name__=="__main__":
     rospy.sleep(0.5)
     k.release_arm()
 
-    print "end effector link:" + k.planner.group[0].get_end_effector_link()
+    print "end effector link:" + k.planner.group.get_end_effector_link()
     print "-"*60
 
 
